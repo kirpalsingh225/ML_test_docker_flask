@@ -9,6 +9,10 @@ with open("model.pkl", "rb") as f:
 # Create Flask app
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "Flask app is running!"
+
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
     if request.method == "GET":
